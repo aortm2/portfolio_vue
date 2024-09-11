@@ -1,0 +1,195 @@
+html,
+body {
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+main {
+  max-width: 168rem;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* 공통 */
+.rows {
+  position: relative;
+  padding: 0 50px;
+  padding-right: 52rem;
+}
+
+section {
+  @include flex;
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - 6.5rem);
+  padding-top: 6.5rem;
+  .section-title{
+    @include title-h2;
+    font-family: 'KBO-Dia-Gothic_bold';
+    margin-bottom: 4rem;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 30rem;
+  top: 20rem;
+  right: 24rem;
+  z-index: 10;
+  transition: right 0.3s ease;
+
+  .nav-list {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 2px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .nav-link {
+    display: block;
+    position: relative;
+    padding: 0.375rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    transition: color 0.15s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 2px solid #000;
+      transition: transform 0.15s ease-in-out;
+      transform: scaleY(0);
+    }
+
+    &.active {
+      color: rgba(0, 0, 0, 0.5);
+
+      &::before {
+        transform: scaleY(1);
+      }
+    }
+
+    &:hover:not(.active)::before {
+      transform: scaleX(1);
+    }
+  }
+
+  .sections-nav-counter {
+    display: inline-block;
+    width: 1.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
+
+/* loading */
+$loader-size: 1.2rem;
+$loader-bg-color: rgba(255, 255, 255, 0.502);
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9999;
+
+  .loader_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    p {
+      display: inline-block;
+      font-size: 1.6rem;
+      color: $white;
+      margin-top: 2.7rem;
+    }
+  }
+
+  .loader {
+    position: relative;
+    width: $loader-size;
+    height: $loader-size;
+    top: calc(50% - $loader-size / 2);
+    left: calc(50% - $loader-size / 2);
+    border-radius: $loader-size;
+    background-color: $white;
+    transform-origin: 50% 50%;
+    animation: loading 1s ease-in-out infinite;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $loader-bg-color;
+      top: 0;
+      height: $loader-size;
+      width: $loader-size;
+      border-radius: $loader-size;
+    }
+
+    &::before {
+      left: -2.5rem;
+    }
+
+    &::after {
+      left: 2.5rem;
+    }
+  }
+}
+
+@keyframes loading {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+}
+
+// 폰트 font
+@mixin fontFace($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: "#{$name}";
+    src:
+      local("#{$file}"),
+      url("@/static/fonts/#{$file}.woff") format("woff"),
+      url("@/static/fonts/#{$file}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include fontFace("NotoSans", "NotoSans-Regular", 400);
+@include fontFace("NotoSans", "NotoSans-Medium", 500);
+@include fontFace("NotoSans", "NotoSans-Bold", 700);
+
+@font-face {
+  font-family: 'KBO-Dia-Gothic_bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

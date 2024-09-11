@@ -1,0 +1,128 @@
+/* ##############################
+	#  header
+################################*/
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+
+  .top-menu {
+    max-width: 168rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    transition: all 1s ease;
+    z-index: 10;
+    overflow: hidden;
+
+    .rows {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  h1 {
+    font-size: 2.8rem;
+
+    a {
+      strong {
+        color: #000;
+      }
+    }
+  }
+
+  &.menu-scroll {
+    background: rgba(0, 0, 0, 0.7);
+
+    h1 {
+      a {
+        color: $white;
+
+        strong {
+          color: #999;
+        }
+      }
+    }
+
+    #nav {
+      li {
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Navigation 스타일
+nav {
+  position: fixed;
+  width: 360px;
+  top: 200px;
+  right: 240px;
+  z-index: 1030;
+  transition: right 0.3s ease;
+
+  .nav-list {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 2px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .nav-link {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $black;
+    text-transform: uppercase;
+    transition: color 0.15s ease-in-out;
+
+    &.active {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.active::before {
+      transform: scaleY(1);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 2px solid $black;
+      transition: transform 0.15s ease-in-out;
+
+      transform: scaleY(0);
+    }
+
+    &:hover:not(.active)::before {
+      transform: scaleX(1);
+    }
+  }
+
+  .sections-nav-counter {
+    display: inline-block;
+    width: 1.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}

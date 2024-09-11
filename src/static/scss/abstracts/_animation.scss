@@ -1,0 +1,41 @@
+/* ##############################
+	#  animation text
+################################*/
+.rotate-text {
+	display: inline-block;
+	animation: rotate 2s infinite linear;
+  
+	@keyframes rotate {
+	  from {
+		transform: rotate(0deg);
+	  }
+	  to {
+		transform: rotate(360deg);
+	  }
+	}
+  }
+
+  .bounce-text {
+	display: inline-block;
+	animation: bounce 2s infinite;
+  
+	@keyframes bounce {
+	  0%, 100% {
+		transform: translateY(0);
+	  }
+	  50% {
+		transform: translateY(-20px);
+	  }
+	}
+  }
+
+  .sliding-text {
+	transform: translateX(-100%);
+	animation: slideIn 0.5s forwards;
+  
+	@keyframes slideIn {
+	  to {
+		transform: translateX(0);
+	  }
+	}
+  }
