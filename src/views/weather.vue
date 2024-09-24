@@ -1,6 +1,6 @@
 <template>
-  <div class="weather" >
-    <p class="current-data">{{ currentDate }}</p>
+  <div class="weather">
+    <p class="current-date">{{ currentDate }}</p>
     <div class="weather-wrap" >
       <div class="weather-box" v-for="(weather, city) in weatherData" :key="city">
         <div v-if="weather">
@@ -23,7 +23,7 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-// 도시 좌표 설정 (기상청에서 제공하는 값)
+// 도시 좌표 설정
 const cities = {
   서울: { nx: 60, ny: 127 },
   부산: { nx: 98, ny: 76 },

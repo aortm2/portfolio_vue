@@ -4,11 +4,12 @@
 
 .weather {
   .current-date{
-    @include title-h3;
+    @include title-h4;
+    text-align: center;
+    margin-bottom: 1rem;
   }
   .weather-wrap{
-    @include flex;
-    justify-content: center;
+    @include flex($justify:center);
     gap: 2rem;
     .weather-box {
       min-width: 30rem;
@@ -24,6 +25,14 @@
       .city-name {
         @include title-h3;
         color: $gray2;
+      }
+      .city-info{
+        @include flex($justify:center);
+        flex-direction: column;
+        .temp{
+          margin-top: 0.5rem;
+          font-size:1.6rem;
+        }
       }
     }
   }
