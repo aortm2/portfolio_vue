@@ -183,6 +183,17 @@ $loader-bg-color: rgba(255, 255, 255, 0.502);
   }
 }
 
+// project 공통
+.project-wrap{
+  padding:4rem 8rem;
+  .project-title{
+    @include title-h2;
+    text-align: center;
+    font-family: 'KBO-Dia-Gothic_bold';
+    margin-bottom:2rem;
+  }
+}
+
 @include fontFace("NotoSans", "NotoSans-Regular", 400);
 @include fontFace("NotoSans", "NotoSans-Medium", 500);
 @include fontFace("NotoSans", "NotoSans-Bold", 700);

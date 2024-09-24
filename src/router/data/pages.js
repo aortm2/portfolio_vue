@@ -4,9 +4,16 @@ export default [
         component: () => import("@/views/main.vue"),
         meta: {pageTitle: "메인",}
     },
+
     {
-      path: "/eChart",
-      component: () => import("@/views/eChart.vue"),
-      meta: {pageTitle: "eChart", layout: "empty" }
-  },
+      path: "/amChart",
+      component: () => import("@/views/amChart.vue"),
+      meta: {pageTitle: "amChart", layout: "projcet" }
+     },
+
+    {
+        path: "/weather",
+        component: () => import("@/views/weather.vue"),
+        meta: {pageTitle: "날씨", layout: "projcet" }
+    },
   ];

@@ -1,0 +1,30 @@
+/* ##############################
+	#  weather
+################################*/
+
+.weather {
+  .current-date{
+    @include title-h3;
+  }
+  .weather-wrap{
+    @include flex;
+    justify-content: center;
+    gap: 2rem;
+    .weather-box {
+      min-width: 30rem;
+      & > div {
+        @include flex;
+        width: 100%;
+        padding: 2rem;
+        background: $white;
+        border-radius: 0.6rem;
+        border: 1px solid $gray8;
+      }
+  
+      .city-name {
+        @include title-h3;
+        color: $gray2;
+      }
+    }
+  }
+}

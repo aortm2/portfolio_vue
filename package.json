@@ -9,9 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.10.5",
+    "axios": "^1.7.7",
     "echarts": "^5.5.1",
     "vue": "^3.4.35",
-    "vue-echarts": "^7.0.3",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {

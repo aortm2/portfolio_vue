@@ -8,6 +8,7 @@
 <script setup>
 import DefaultLayout from "/src/layouts/DefaultLayout.vue";
 import EmptyLayout from "@/layouts/EmptyLayout.vue";
+import ProjectLayout from "@/layouts/ProjectLayout.vue";
 import Loading from "@/layouts/components/Loading.vue";
 
 import { ref, onMounted, computed } from 'vue';
@@ -17,6 +18,7 @@ const router = useRoute();
 const layouts = {
   default: DefaultLayout,
   empty: EmptyLayout,
+  projcet: ProjectLayout,
 };
 // layout
 const layoutType = computed(() => Object.keys(layouts).find((x) => x === router.meta.layout)) ?? "default";
