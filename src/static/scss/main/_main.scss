@@ -151,15 +151,18 @@
   }
 
 .project{
-    
-    .project-list{
-        @include flex;
-        gap: 4rem;
-        .list{
-            background:$black;
-            color:$white;
-            width: 25%;
-            height: 30rem;
+    article{
+        width: 100%;
+        .project-list{
+            @include flex;
+            gap: 4rem;
+            .list{
+                background:$black;
+                color:$white;
+                width: 25%;
+                height: 30rem;
+            }
         }
     }
+    
 }
