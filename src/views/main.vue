@@ -5,7 +5,7 @@
         <h2 class="sliding-text">PORTFOLIO</h2>
         <span class="name">문정현</span>
       </div>
-      <p class="greeting">이 홈페이지는 vue3로 만들어졌습니다.</p>
+      <p class="greeting">이 홈페이지는 vue3로 제작 되었습니다.</p>
     </article>
   </section>
 

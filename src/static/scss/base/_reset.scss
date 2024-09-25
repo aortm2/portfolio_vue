@@ -187,7 +187,7 @@ select:active,
 select:focus,
 button:active,
 button:focus {
-  outline: 3px dashed #000;
+  // outline: 3px dashed #000;
 }
 ::placeholder {
   color: unset;
@@ -272,4 +272,7 @@ q:before,
 q:after {
   content: "";
   content: none;
+}
+strong{
+  font-weight: bold;
 }

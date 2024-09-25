@@ -11,17 +11,31 @@
   .weather-wrap{
     @include flex($justify:center);
     gap: 2rem;
+    height: 100%;
+    position: relative;
     .weather-box {
-      min-width: 30rem;
+      @include flex;
+      position: relative;
       & > div {
-        @include flex;
-        width: 100%;
-        padding: 2rem;
-        background: $white;
+        @include flex($justify:space-between);
+        height: 10rem;
         border-radius: 0.6rem;
+        overflow: hidden;
         border: 1px solid $gray8;
+        transition: all 1s ease;
+        background-color: $white;
       }
-  
+      &::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $black;
+      }
       .city-name {
         @include title-h3;
         color: $gray2;
@@ -29,11 +43,116 @@
       .city-info{
         @include flex($justify:center);
         flex-direction: column;
+        padding: 2rem;
         .temp{
           margin-top: 0.5rem;
           font-size:1.6rem;
         }
       }
+
+      .city-weather{
+        height: 100%;
+        text-align: center;
+        padding: 2rem;
+        background: $gray9;
+        &.gray{
+          color: $white;
+          background: $gray5;
+        }
+        img{
+          max-width: 4rem;
+          margin-bottom: 0.7rem;
+        }
+        p{
+          font-size:1.6rem;
+        }
+      }
+
+      .detail-info{
+        display: none;
+        margin-top: 0.8rem;
+      }
+
+      .detail-bot{
+        > div{
+          opacity: 0;
+        }
+      }
+
+      &.active{
+        position: fixed;
+        align-content: flex-start;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transition: all 1s ease;
+        z-index: 99;
+        > div{
+          position: relative;
+          margin: 0 auto;
+          top: 20%;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          min-width: 30rem;
+          height: auto;
+          transform: scale(1.5);
+          background-color: transparent;
+          border: 0;
+        }
+        .city-weather{
+          @include flex($direction: column, $justify: center);
+          width: 10rem;
+          height: 10rem;
+          padding: 1rem;
+          border-radius: 50%;
+        }
+        .detail-info{
+          display: block;
+        }
+        .detail-bot{
+          > div{
+            animation: info 1s forwards;
+            &:nth-child(1){
+              animation-delay: 0;
+            }
+            &:nth-child(2){
+              animation-delay: 0.5s;
+            }
+            &:nth-child(3){
+              animation-delay: 1s;
+            }
+            &:nth-child(4){
+              animation-delay: 1.5s;
+            }
+          }
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #fff, $alpha: 0.8);
+          backdrop-filter:blur(6px);
+          transition: all 1s ease;
+        }
+      }
+    }
+  }
+  .guide-txt{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    color:$gray5;
+    .sm{
+      color: $gray3;
+      font-size:1.3rem;
+      margin-top: 0.5rem;
+      color: $primary;
+      font-weight: 500;
+    }
+    strong{
+      color:$gray1;
     }
   }
 }

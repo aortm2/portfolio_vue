@@ -151,15 +151,15 @@
   }
 
 .project{
+    
     .project-list{
         @include flex;
         gap: 4rem;
         .list{
             background:$black;
             color:$white;
-            width: 30rem;
+            width: 25%;
             height: 30rem;
-            border-radius: 50%;
         }
     }
 }
