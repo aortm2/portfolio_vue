@@ -155,12 +155,16 @@
         width: 100%;
         .project-list{
             @include flex;
+            width: 100%;
             gap: 4rem;
-            .list{
-                background:$black;
-                color:$white;
-                width: 25%;
-                height: 30rem;
+            li{
+                width: calc(25% - 3rem);
+                .list{
+                    background:$black;
+                    color:$white;
+
+                    height: 30rem;
+                }
             }
         }
     }
