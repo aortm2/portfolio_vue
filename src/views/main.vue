@@ -32,15 +32,15 @@
           </a>
         </li>
         <li>
-          <a class="list" target="_blank">
+          <a href="/Drawing" class="list" target="_blank">
             <span class="number">02</span>
-            <span class="title">amChart</span>
+            <span class="title">Drawing</span>
           </a>
         </li>
         <li>
-          <a hef="/amChart" class="list" target="_blank">
+          <a hef="/DragDrop" class="list" target="_blank">
             <span class="number">03</span>
-            <span class="title">amChart</span>
+            <span class="title">Drag & Drop</span>
           </a>
         </li>
 
