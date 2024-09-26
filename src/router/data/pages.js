@@ -16,4 +16,10 @@ export default [
         component: () => import("@/views/weather.vue"),
         meta: {pageTitle: "날씨", layout: "projcet" }
     },
+
+    {
+        path: "/DragDrop",
+        component: () => import("@/views/DragDrop.vue"),
+        meta: {pageTitle: "Drag&Drop", layout: "projcet" }
+    },
   ];

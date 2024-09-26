@@ -26,16 +26,22 @@
     <article>
       <ul class="project-list">
         <li>
-          <button type="button" class="list">Project</button>
+          <a href="/weather" class="list" target="_blank">
+            <span class="number">01</span>
+            <span class="title">Weather</span>
+          </a>
         </li>
         <li>
-          <button type="button" class="list">Project</button>
+          <a class="list" target="_blank">
+            <span class="number">02</span>
+            <span class="title">amChart</span>
+          </a>
         </li>
         <li>
-          <button type="button" class="list">Project</button>
-        </li>
-        <li>
-          <button type="button" class="list">Project</button>
+          <a hef="/amChart" class="list" target="_blank">
+            <span class="number">03</span>
+            <span class="title">amChart</span>
+          </a>
         </li>
       </ul>
     </article>

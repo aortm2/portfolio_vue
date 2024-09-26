@@ -13,6 +13,15 @@ main {
   transition: all 0.3s ease;
 }
 
+iframe{
+  width: 100%;
+  height: 100%;
+}
+.iframe-wrap{
+  width: 100%;
+  height: calc(100dvh - 15rem);
+}
+
 /* 공통 */
 .rows {
   position: relative;
