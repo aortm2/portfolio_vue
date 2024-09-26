@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 html, body{overflow: hidden;}
-main{background: black;}
 
 img{
     -webkit-user-select: none; /* Chrome, Safari, Edge */

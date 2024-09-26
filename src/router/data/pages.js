@@ -22,4 +22,11 @@ export default [
         component: () => import("@/views/DragDrop.vue"),
         meta: {pageTitle: "Drag&Drop", layout: "projcet" }
     },
+
+    
+    {
+        path: "/Drawing",
+        component: () => import("@/views/Drawing.vue"),
+        meta: {pageTitle: "그림 그리기", layout: "projcet" }
+    },
   ];

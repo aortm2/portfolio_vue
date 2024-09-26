@@ -43,6 +43,13 @@
             <span class="title">amChart</span>
           </a>
         </li>
+
+        <li>
+          <a hef="/amChart" class="list" target="_blank">
+            <span class="number">04</span>
+            <span class="title">amChart</span>
+          </a>
+        </li>
       </ul>
     </article>
   </section>
