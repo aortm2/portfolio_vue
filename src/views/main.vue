@@ -26,29 +26,37 @@
     <article>
       <ul class="project-list">
         <li>
-          <a href="/weather" class="list" target="_blank">
-            <span class="number">01</span>
-            <span class="title">Weather</span>
-          </a>
+          <button class="list" >
+            <router-link to="/weather" target="_blank">
+              <span class="number">01</span>
+              <span class="title">Weather</span>
+            </router-link>
+          </button>
         </li>
         <li>
-          <a href="/Drawing" class="list" target="_blank">
-            <span class="number">02</span>
-            <span class="title">Drawing</span>
-          </a>
+          <button class="list">
+            <router-link to="/Drawing" target="_blank">
+              <span class="number">02</span>
+              <span class="title">Drawing</span>
+            </router-link>
+          </button>
         </li>
         <li>
-          <a hef="/DragDrop" class="list" target="_blank">
+          <button class="list">
+            <router-link to="/DragDrop" target="_blank">
             <span class="number">03</span>
             <span class="title">Drag & Drop</span>
-          </a>
+            </router-link>
+          </button>
         </li>
 
         <li>
-          <a hef="/amChart" class="list" target="_blank">
-            <span class="number">04</span>
-            <span class="title">amChart</span>
-          </a>
+          <button class="list">
+            <router-link to="/amChart" target="_blank">
+              <span class="number">04</span>
+              <span class="title">amChart</span>
+            </router-link>
+          </button>
         </li>
       </ul>
     </article>
