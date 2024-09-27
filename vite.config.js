@@ -1,4 +1,4 @@
-import path from "path";
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -7,7 +7,9 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "/@views": fileURLToPath(new URL("./src/views", import.meta.url)),
+      "/@static": fileURLToPath(new URL("./src/static", import.meta.url)),
     },
   },
   css: {
@@ -23,16 +25,38 @@ export default defineConfig({
   },
 
   build: {
-    outDir: 'dist', // 빌드 출력 디렉토리
-    assetsDir: 'static', // 자산 파일이 저장될 디렉토리
-    sourcemap: true, // 소스 맵 생성 여부
+    minify: "terser",
+    outDir: "dist",
+    assetsDir: "static",
+    chunkSizeWarningLimit: 2000,
     rollupOptions: {
-      input: '@/main.js', // 진입점 설정
-      output: {
-        entryFileNames: 'js/[name].js', // 진입점 파일 이름 패턴
-        chunkFileNames: 'js/[name].js', // 청크 파일 이름 패턴
-        assetFileNames: '[ext]/[name].[hash].[ext]', // 자산 파일 이름 패턴
-      },
+        output: {
+            assetFileNames: (assetInfo) => {
+                // build 시 파일 타입 별 폴더 생성
+                let extType = assetInfo.name.split(".").at(1);
+                if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                    extType = "img";
+                } else if (/woff/i.test(extType)) {
+                    extType = "font";
+                }
+                return `static/${extType}/[name]-[hash][extname]`;
+            },
+            chunkFileNames: "static/js/[name]-[hash].js",
+            entryFileNames: "static/js/[name]-[hash].js",
+        },
     },
+    commonjsOptions: {
+        // include: [/node_modules/], // 번들에 포함시킬 모듈의 경로
+        // extensions: [".js", ".cjs"], // CommonJS 모듈로 간주할 파일의 확장자
+        // strictRequires: true, // require 구문에 해당 모듈이 없을 경우 에러 발생
+        // transformMixedEsModules: true, // import와 require문을 함께 사용하는 경우 이를 번들에 포함시키기 위함
+    },
+    // viteVuePluginOptions: {
+    //     template: {
+    //         compilerOptions: {
+    //             isCustomElement: (tag) => tag.startsWith("q-"),
+    //         },
+    //     },
+    // },
   },
 });
