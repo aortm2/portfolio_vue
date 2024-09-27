@@ -28,8 +28,6 @@ export default defineConfig({
     minify: "terser",
     outDir: "dist",
     assetsDir: "assets",
-    assetsInlineLimit: 20000,
-    chunkSizeWarningLimit: 2000,
     rollupOptions: {
         output: {
             assetFileNames: (assetInfo) => {

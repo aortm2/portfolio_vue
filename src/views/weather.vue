@@ -48,12 +48,12 @@ const cities = {
 };
 
 const images = {
-  clear: './src/static/img/project/ico_clear.svg', // 맑음 
-  rain: './src/static/img/project/ico_rain.svg',   // 비
-  cloudy: './src/static/img/project/ico_cloudy.svg', // 흐림 
-  snow: './src/static/img/project/ico_snow.svg',   // 눈
-  drizzle: './src/static/img/project/ico_drizzle.svg', // 소나기
-  sleet: './src/static/img/project/ico_sleet.svg', // 빙판
+  clear: new URL(`/src/static/img/project/ico_clear.svg`, import.meta.url).href,
+  rain: new URL(`/src/static/img/project/ico_rain.svg`, import.meta.url).href,
+  cloudy: new URL(`/src/static/img/project/ico_cloudy.svg`, import.meta.url).href,
+  snow: new URL(`/src/static/img/project/ico_snow.svg`, import.meta.url).href,
+  drizzle: new URL(`/src/static/img/project/ico_drizzle.svg`, import.meta.url).href,
+  sleet: new URL(`/src/static/img/project/ico_sleet.svg`, import.meta.url).href,
 };
 
 const weatherData = ref({});

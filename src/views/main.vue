@@ -69,7 +69,7 @@
         <div v-for="(history, index) in historys" :key="index">
           <a :href="history.link" target="_blank">
             <div class="history-img">
-              <img :src="imgPath + history.imgSrc + '.png'" />
+              <img :src="history.imgSrc" />
             </div>
             <div class="history-info">
               <h4 class="history-title">{{ history.title }}</h4>
@@ -112,39 +112,38 @@ const historys = [
     title: "The Hagwon",
     company: "hagwon",
     tags: "Cross-browsing / jQuery / Javascript",
-    imgSrc: "hagwon",
+    imgSrc: new URL(`/src/static/img/main/hagwon.png`, import.meta.url).href,
     link: "https://www.thehagwon.com/common/greeting.do",
   },
   {
     title: "KODA교육협력센터",
     company: "한국부동산개발협회",
     tags: "Cross-browsing / jQuery / Javascript",
-    imgSrc: "koda",
+    imgSrc: new URL(`/src/static/img/main/koda.png`, import.meta.url).href,
     link: "https://www.koda.or.kr/cmmn/index.do",
   },
   {
     title: "한국고용노동교육원",
     company: "한국고용노동교육원",
     tags: "Cross-browsing / jQuery / Javascript",
-    imgSrc: "keli",
+    imgSrc: new URL(`/src/static/img/main/keli.png`, import.meta.url).href,
     link: "https://www.keli.kr/",
   },
   {
     title: "국립국어원 점자정보누리집",
     company: "국립국어원",
     tags: "Cross-browsing / jQuery / Javascript",
-    imgSrc: "korea",
+    imgSrc: new URL(`/src/static/img/main/korea.png`, import.meta.url).href,
     link: "https://korean.go.kr/braille/common/greeting.do",
   },
   {
     title: "문화예술 내일",
     company: "한국문화예술위원회",
     tags: "Cross-browsing / jQuery / Javascript",
-    imgSrc: "arko",
+    imgSrc: new URL(`/src/static/img/main/arko.png`, import.meta.url).href,
     link: "https://hrd.arko.or.kr/common/greeting.do",
   },
 ];
-
 
 
 </script>
