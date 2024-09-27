@@ -33,7 +33,7 @@ export default defineConfig({
         output: {
             assetFileNames: (assetInfo) => {
                 // build 시 파일 타입 별 폴더 생성
-                let extType = assetInfo.name.split(".").at(1);
+                let extType = assetInfo.name.split('.').pop();
                 if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
                     extType = "img";
                 } else if (/woff/i.test(extType)) {
@@ -45,18 +45,5 @@ export default defineConfig({
             entryFileNames: "static/js/[name]-[hash].js",
         },
     },
-    commonjsOptions: {
-        // include: [/node_modules/], // 번들에 포함시킬 모듈의 경로
-        // extensions: [".js", ".cjs"], // CommonJS 모듈로 간주할 파일의 확장자
-        // strictRequires: true, // require 구문에 해당 모듈이 없을 경우 에러 발생
-        // transformMixedEsModules: true, // import와 require문을 함께 사용하는 경우 이를 번들에 포함시키기 위함
-    },
-    // viteVuePluginOptions: {
-    //     template: {
-    //         compilerOptions: {
-    //             isCustomElement: (tag) => tag.startsWith("q-"),
-    //         },
-    //     },
-    // },
   },
 });
