@@ -27,7 +27,8 @@ export default defineConfig({
   build: {
     minify: "terser",
     outDir: "dist",
-    assetsDir: "static",
+    assetsDir: "assets",
+    assetsInlineLimit: 20000,
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
         output: {
