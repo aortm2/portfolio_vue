@@ -18,7 +18,7 @@ const router = useRoute();
 const layouts = {
   default: DefaultLayout,
   empty: EmptyLayout,
-  projcet: ProjectLayout,
+  project: ProjectLayout,
 };
 // layout
 const layoutType = computed(() => Object.keys(layouts).find((x) => x === router.meta.layout)) ?? "default";

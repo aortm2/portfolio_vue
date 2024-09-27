@@ -27,7 +27,7 @@
       <ul class="project-list">
         <li>
           <button class="list" >
-            <router-link to="/weather" target="_blank">
+            <router-link to="/weather">
               <span class="number">01</span>
               <span class="title">Weather</span>
             </router-link>
@@ -35,7 +35,7 @@
         </li>
         <li>
           <button class="list">
-            <router-link to="/Drawing" target="_blank">
+            <router-link to="/Drawing">
               <span class="number">02</span>
               <span class="title">Drawing</span>
             </router-link>
@@ -43,7 +43,7 @@
         </li>
         <li>
           <button class="list">
-            <router-link to="/DragDrop" target="_blank">
+            <router-link to="/DragDrop">
             <span class="number">03</span>
             <span class="title">Drag & Drop</span>
             </router-link>
@@ -52,7 +52,7 @@
 
         <li>
           <button class="list">
-            <router-link to="/amChart" target="_blank">
+            <router-link to="/amChart">
               <span class="number">04</span>
               <span class="title">amChart</span>
             </router-link>
