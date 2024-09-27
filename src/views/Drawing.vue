@@ -1,6 +1,6 @@
 <template>
   <div class="iframe-wrap">
-    <iframe src="./public/drawing/index.html" frameborder="0"></iframe>
+    <iframe src="/drawing/index.html" frameborder="0"></iframe>
   </div>
 </template>
 
