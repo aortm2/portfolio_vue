@@ -105,7 +105,7 @@
 </template>
 <script setup>
 
-const imgPath = '/src/static/img/main/';
+const imgPath = './src/static/img/main/';
 
 const historys = [
   {

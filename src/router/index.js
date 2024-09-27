@@ -7,5 +7,5 @@ const routes = [...pages];
 
 export const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: pages,
 });
