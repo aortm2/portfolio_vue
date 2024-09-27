@@ -102,3 +102,14 @@
   justify-content: $justify;
   flex-direction: $direction;
 }
+
+// media query
+$tablet: 768px;
+$note: 1024px;
+$desktop: 1420px;
+
+@mixin tablet {
+  @media (max-width: ($desktop - 1)) {
+    @content;
+  }
+}
