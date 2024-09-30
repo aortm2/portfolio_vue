@@ -2,17 +2,25 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    text-align: center;
+    @include tablet{
+        text-align: center;
+    }
     article{
         width: 100%;
     }
     h2{
         @include title-h1;
+        @include mobile{
+            font-size: 5rem;
+        }
     }
 
     .name{
         @include title-h2;
-        color: $gray2
+        color: $gray2;
+        @include mobile{
+            font-size: 3rem;
+        }
     }
 
     .greeting {
@@ -46,6 +54,9 @@
     .about-txt {
         color: var(--fontColor);
         font-size: 1.7rem;
+        @include tablet{
+            font-size: 1.5rem;
+          }
 
         & + .about-txt {
             margin-top: 2rem;
@@ -62,9 +73,13 @@
 
     .history-article > div {
         position: relative;
-        width: calc(100% / 3 - 2rem);
+        width: calc(100% / 3 - 1.5rem);
+        overflow: hidden;
+        @include mobile{
+            width: calc(100% / 2 - 1rem);
+        }
         .history-img {
-            max-height: 23rem;
+            height: 100%;
             line-height: 0;
             transition: opacity .15s linear;
             border: 1px solid #dfdfdf;
@@ -164,15 +179,25 @@
             @include flex;
             width: 100%;
             gap: 4rem;
+            @include tablet{
+                gap:2rem;
+            }
             li{
                 width: calc(19% - 2.5rem);
+                height: 23rem;
                 transition: transform 0.5s ease, box-shadow 0.5s ease;
+                @include tablet{
+                    width: calc(24% - 1rem);
+                }
+                @include mobile{
+                    width: calc(50% - 1rem);
+                    height: 20rem;
+                }
                 .list{
-                    
                     background:$black;
                     color:$white;
                     width: 100%;
-                    height: 23rem;
+                    height: 100%;
                     padding: 2rem;
                     .number{
                         @include fs-16;
@@ -188,6 +213,9 @@
                         @include title-t2;
                         font-weight: 500;
                         margin-top: 0.5rem;
+                        @include tablet{
+                            font-size:1.7rem;
+                        }
                     }
                 }
 

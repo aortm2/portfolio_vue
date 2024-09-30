@@ -28,7 +28,7 @@ iframe{
   padding: 0 50px;
   padding-right: 52rem;
   @include tablet{
-    padding:0 3rem;
+    padding:0 1rem 0 2rem;
   }
 }
 
@@ -42,6 +42,9 @@ section {
     @include title-h2;
     font-family: 'KBO-Dia-Gothic_bold';
     margin-bottom: 4rem;
+    @include tablet{
+      font-size: 3rem;
+    }
   }
 }
 
