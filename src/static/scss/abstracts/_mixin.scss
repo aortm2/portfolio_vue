@@ -119,3 +119,28 @@ $desktop: 1420px;
     @content;
   }
 }
+
+// margin, padding helper
+$spacemounts: (0, 5, 8, 10, 12, 15, 16, 20, 24, 30, 32, 35, 40, 45, 50, 56, 72, 80, 100);
+$sides: (top, bottom, left, right);
+
+@each $space in $spacemounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+// unselect
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
