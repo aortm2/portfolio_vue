@@ -27,8 +27,8 @@
       <h2 class="section-title">PROJECT</h2>
       <ul class="project-list">
         <li>
-          <button class="list" >
-            <router-link to="/weather">
+          <button class="list">
+            <router-link to="/weather" @click="saveProject('project')">
               <span class="number">01</span>
               <span class="title">Weather</span>
             </router-link>
@@ -36,7 +36,7 @@
         </li>
         <li>
           <button class="list">
-            <router-link to="/Drawing">
+            <router-link to="/Drawing" @click="saveProject('project')">
               <span class="number">02</span>
               <span class="title">Drawing</span>
             </router-link>
@@ -44,7 +44,7 @@
         </li>
         <li>
           <button class="list">
-            <router-link to="/DragDrop">
+            <router-link to="/DragDrop" @click="saveProject('project')">
             <span class="number">03</span>
             <span class="title">Drag & Drop</span>
             </router-link>
@@ -53,7 +53,7 @@
 
         <li>
           <button class="list">
-            <router-link to="/amChart">
+            <router-link to="/amChart" @click="saveProject('project')">
               <span class="number">04</span>
               <span class="title">amChart</span>
             </router-link>
@@ -105,8 +105,23 @@
       </section>
 </template>
 <script setup>
+import { onMounted } from 'vue';
 
-const imgPath = '/src/static/img/main/';
+const saveProject = (projectName) =>{
+  localStorage.setItem('last', projectName);
+}
+
+const scrollToProjectSection = () => {
+  const lastProject = localStorage.getItem('last');
+  if (lastProject) {
+    const projectSection = document.querySelector('.project');
+    projectSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+onMounted(() => {
+  scrollToProjectSection();
+});
 
 const historys = [
   {
