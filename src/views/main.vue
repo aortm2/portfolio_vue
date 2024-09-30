@@ -24,6 +24,7 @@
 
   <section id="section_03" class="project">
     <article>
+      <h2 class="section-title">PROJECT</h2>
       <ul class="project-list">
         <li>
           <button class="list" >

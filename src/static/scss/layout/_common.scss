@@ -44,6 +44,7 @@ section {
     margin-bottom: 4rem;
     @include tablet{
       font-size: 3rem;
+      text-align: center;
     }
   }
 }
@@ -141,6 +142,11 @@ $loader-bg-color: rgba(255, 255, 255, 0.502);
     text-align: center;
     font-family: 'KBO-Dia-Gothic_bold';
     margin-bottom:2rem;
+  }
+
+  .btn-back{
+    position: absolute;
+    right: 10rem;
   }
 }
 
