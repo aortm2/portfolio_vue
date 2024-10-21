@@ -58,7 +58,7 @@
     const section = menuItems.value[props.currentSection];
     return section ? section.id : '';
   }
-
+  console.log(item.title)
   return props.currentSection || '';
 });
 
