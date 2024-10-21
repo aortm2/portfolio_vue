@@ -137,6 +137,9 @@ $loader-bg-color: rgba(255, 255, 255, 0.502);
 // project 공통
 .project-wrap{
   padding:4rem 8rem;
+  @include tablet{
+    padding: 4rem 2rem;
+  }
   .project-title{
     @include title-h2;
     text-align: center;
